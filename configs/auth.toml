@@ -1,0 +1,2 @@
+port=":3001"
+dbURL="postgres://egzhenwkndzaxp:95a567fe00a9a311be962ecd3dad28486addb01ed960cae38782c7d29fc1913f@ec2-46-137-156-205.eu-west-1.compute.amazonaws.com:5432/d23u4gm66kgtfs"

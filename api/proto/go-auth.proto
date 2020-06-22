@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package api;
+
+
+service Auth {
+  rpc SignIn(SignInRequest) returns (SignInResponce) {}
+  rpc SignUp(SignUpRequest) returns (SignUpResponce) {}
+  rpc TokenDecrypt(TokenRequest) returns (TokenResponce) {}
+}
+
+message SignInRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message SignInResponce {
+  string token = 1;
+  int32 userType= 2;
+}
+
+message SignUpRequest {
+  int32 userType = 1;
+  string email = 2;
+  string lastname = 3;
+  string firstname = 4;
+  google.protobuf.Timestamp birthDate = 6;
+  string phone = 7;
+}
+
+message SignUpResponce {
+  bool status = 1;
+  string message = 2;
+}
+
+message TokenRequest {
+  string token = 1;
+}
+
+message TokenResponce {
+  int32 id = 1;
+  int32 userType = 2;
+  string email = 3;
+  string lastname = 4;
+  string firstname = 5;
+  google.protobuf.Timestamp birthDate = 7;
+  string phone = 8;
+}
